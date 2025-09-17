@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oferta Especial - Produto X</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .oferta {
+        text-align: center;
+        padding: 3rem 1rem;
+        background: #fff;
+      }
+      .oferta h1 {
+        color: #e63946;
+        font-size: 2.5rem;
+      }
+      .countdown {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        font-weight: bold;
+      }
+      form {
+        margin-top: 2rem;
+      }
+      input[type="email"] {
+        padding: 1rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 80%;
+        max-width: 300px;
+      }
+      button {
+        padding: 1rem 2rem;
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+        background: #06d6a0;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      button:hover {
+        background: #05b383;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Oferta Exclusiva</h2>
+    </header>
+
+    <section class="oferta">
+      <h1>🔥 50% de Desconto HOJE 🔥</h1>
+      <p>
+        Aproveite essa oportunidade única para garantir o
+        <strong>Produto X</strong> pela metade do preço!
+      </p>
+
+      <div class="countdown" id="countdown">Oferta expira em: 00:00:00</div>
+
+      <a href="https://seu-checkout.com" class="btn">Garantir Desconto Agora</a>
+
+      <h2>Ou deixe seu e-mail e receba o cupom:</h2>
+      <form
+        onsubmit="alert('Obrigado! Seu cupom será enviado.'); return false;"
+      >
+        <input type="email" placeholder="Digite seu e-mail" required />
+        <button type="submit">Receber Cupom</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Produto X - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Script simples de contagem regressiva -->
+    <script>
+      function startCountdown(durationInMinutes) {
+        let timer = durationInMinutes * 60;
+        const countdownEl = document.getElementById("countdown");
+
+        setInterval(function () {
+          const minutes = String(Math.floor(timer / 60)).padStart(2, "0");
+          const seconds = String(timer % 60).padStart(2, "0");
+          countdownEl.textContent =
+            "Oferta expira em: " + minutes + ":" + seconds;
+
+          if (--timer < 0) {
+            countdownEl.textContent = "Oferta encerrada!";
+          }
+        }, 1000);
+      }
+
+      startCountdown(15); // Contagem regressiva de 15 minutos
+    </script>
+  </body>
+</html>
